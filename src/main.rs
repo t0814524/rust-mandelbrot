@@ -15,7 +15,6 @@ fn main() {
 
             // call mandelbrot::generate_image(width, height, max_iterations) and save the result to an image
             let image = mandelbrot::generate_image(width, height, max_iterations);
-            println!("asdf");
             // call the get_mandelbrot_pixels() method on the image struct and save the result in mandelbrot_pixel_count
             let mandelbrot_pixel_count = image.get_mandelbrot_pixels();
 

@@ -7,6 +7,8 @@ pub struct Complex {
     pub im: f64,
 }
 
+// performs addi]on of two Complex numbers.
+//      Addi2on of 2 complex numbers means simply adding the real parts of the number with the complex parts of
 impl Add for Complex {
     type Output = Self;
     fn add(self, rhs: Self) -> Self::Output {
@@ -31,15 +33,6 @@ impl Mul for Complex {
 }
 
 impl Complex {
-    // performs addi]on of two Complex numbers.
-    //      Addi2on of 2 complex numbers means simply adding the real parts of the number with the complex parts of
-    // pub fn Add(&self, other: &Self) -> Complex {
-    //     Complex {
-    //         re: self.re + other.re,
-    //         im: self.im + other.im,
-    //     }
-    // }
-
     // calculates the magnitude of the current complex number.
     //      Instead of calcula]ng the actual absolute value (since we are comparing against the value 4 in our
     //      algorithm), we calculate the following:

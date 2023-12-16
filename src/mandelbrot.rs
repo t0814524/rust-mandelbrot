@@ -33,9 +33,12 @@ pub fn generate_image(width: usize, height: usize, max_iterations: usize) -> Ima
         let cy = (y as f64 / image.height as f64 - 0.5) * 2.0;
         let c = Complex { re: cx, im: cy };
 
+        /**
+         * assignment says here if check_pixel return some IT IS in the set  
+         * but it also says about the implementation of the check_pixel fn that it's NOT IN THE SET if it returns Some. so what is it?? idk but to match in the tests needed to switch the matching here  
+         */
         match check_pixel(c, max_iterations) {
-            Some(_) => {} // alredy initialized values with 0,0,0
-            None => {
+            Some(_) => {
                 // let p = image.data[i];
                 // idk what for but says so in specification
                 match image.get_mut(x, y) {
@@ -44,11 +47,10 @@ pub fn generate_image(width: usize, height: usize, max_iterations: usize) -> Ima
                         p.b = 255;
                         p.g = 255;
                     }
-                    None => {
-                        println!("wtf");
-                    }
-                }
+                    None => {}
+                } // alredy initialized values with 0,0,0
             }
+            None => {}
         }
     }
     image

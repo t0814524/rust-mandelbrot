@@ -10,7 +10,7 @@ pub struct Pixel {
 
 impl Display for Pixel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "({} {} {})", self.r, self.b, self.g)
+        write!(f, "{} {} {}", self.r, self.b, self.g)
     }
 }
 // implement the Image struct and traits below
